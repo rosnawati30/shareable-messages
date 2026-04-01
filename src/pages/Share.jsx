@@ -4,7 +4,7 @@ import axios from "axios"
 import Layout from "../components/Layout"
 import Footer from "../components/Footer"
 
-const API_URL = import.meta.en.VITE_API_URL
+const API_URL = import.meta.env.VITE_API_URL
 
 export default function Share() {
     const { id } = useParams()

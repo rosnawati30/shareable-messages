@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 import Footer from '../components/Footer'
 
 const BASE_URL = import.meta.env.VITE_APP_URL
-const API_URL = import.meta.en.VITE_API_URL
+const API_URL = import.meta.env.VITE_API_URL
 
 export default function VoiceMessage() {
     const [isRecording, setIsRecording] = useState(false)
