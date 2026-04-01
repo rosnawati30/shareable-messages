@@ -16,7 +16,7 @@ export default function Share() {
     useEffect(() => {
         const fetchAudio = async () => {
             try {
-                const res = await axios.get(`{API_URL}/api/audio/${id}`)
+                const res = await axios.get(`${API_URL}/api/audio/${id}`)
                 setAudioUrl(res.request.responseURL)
             }
             catch (err) {
