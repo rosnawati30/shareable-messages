@@ -61,10 +61,6 @@ export default function VoiceMessage() {
                 type: 'audio/webm'
             })
 
-            // const url = URL.createObjectURL(audioBlob)
-            // setAudioUrl(url)
-            // audioChunksRef.current = []
-
             //send to backend 
             uploadAudio(audioBlob)
             audioChunksRef.current = []
