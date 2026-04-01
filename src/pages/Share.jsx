@@ -4,6 +4,8 @@ import axios from "axios"
 import Layout from "../components/Layout"
 import Footer from "../components/Footer"
 
+const API_URL = import.meta.en.VITE_API_URL
+
 export default function Share() {
     const { id } = useParams()
 
@@ -14,7 +16,7 @@ export default function Share() {
     useEffect(() => {
         const fetchAudio = async () => {
             try {
-                const res = await axios.get(`https://audio-api-supabase-production.up.railway.app/api/audio/${id}`)
+                const res = await axios.get(`{API_URL}/api/audio/${id}`)
                 setAudioUrl(res.request.responseURL)
             }
             catch (err) {

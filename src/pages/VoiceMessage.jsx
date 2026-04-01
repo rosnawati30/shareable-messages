@@ -24,7 +24,7 @@ export default function VoiceMessage() {
             formData.append('audio', audioBlob)
 
             const res = await axios.post(
-                'https://audio-api-supabase-production.up.railway.app/api/upload-audio',
+                `${API_URL}/api/upload-audio`,
                 formData
             )
 
