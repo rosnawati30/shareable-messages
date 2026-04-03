@@ -83,33 +83,33 @@ export default function VoiceMessage() {
                 {!isRecording ? (
                     <button
                         onClick={startRecording}
-                        className='bg-green-500 text-white px-4 py-2 rounded-lg'
+                        className="bg-green-500 text-white px-4 py-2 rounded-lg"
                     >
                         Start Recording
                     </button>
                 ) : (
                     <button
                         onClick={stopRecording}
-                        className='bg-red-500 text-white px-4 py-2 rounded-lg'
+                        className="bg-red-500 text-white px-4 py-2 rounded-lg"
                     >
                         Stop Recording
                     </button>
                 )}
 
-                {loading && <p className='mt-4'>Uploading...</p>}
+                {loading && <p className="mt-4" >Uploading...</p>}
 
                 {audioUrl && (
-                    <audio controls src={audioUrl} className='mt-4' />
+                    <audio controls src={audioUrl} className="mt-4" />
                 )}
 
                 {shareLink && (
-                    <div className='mt-4 text-center'>
+                    <div className="mt-4 text-center" >
                         <p>Share this link:</p>
                         <input
-                            type='text'
+                            type="text"
                             value={shareLink}
                             readOnly
-                            className='border p-2 w-full max-w-md'
+                            className="border p-2 w-full max-w-md"
                         />
 
                         <button
@@ -117,7 +117,7 @@ export default function VoiceMessage() {
                                 navigator.clipboard.writeText(shareLink)
                                 alert('Copied!')
                             }}
-                            className='mt-2 bg-blue-500 text-white px-3 py-1 rouded'
+                            className="mt-2 bg-blue-500 text-white px-3 py-1 rounded"
                         >
                             Copy
                         </button>
