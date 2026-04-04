@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import axios from 'axios'
 import Layout from '../components/Layout'
 import Footer from '../components/Footer'
@@ -7,6 +8,9 @@ const BASE_URL = import.meta.env.VITE_APP_URL
 const API_URL = import.meta.env.VITE_API_TEXT_URL
 
 export default function TextMessage() {
+
+  const location = useLocation()
+  const selectedTemplate = location.state?.template
 
   const [form, setForm] = useState({
     to: "",
@@ -39,7 +43,8 @@ export default function TextMessage() {
       const res = await axios.post(`${API_URL}/api/messages`, {
         to: form.to,
         from: form.from,
-        message: form.message
+        message: form.message,
+        template: selectedTemplate?.image
       })
 
       const data = res.data

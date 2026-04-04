@@ -39,22 +39,36 @@ export default function ShareText() {
 
     return (
         <Layout>
-            <div className="min-h-screen flex flex-col items-center justify-center">
-                <h1 className="text-2xl font-bold mb-4">📩 Text Message</h1>
-
-                {message && (
-                    <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md text-center">
-                        <p className="text-gray-700 mb-2">
-                            <strong>To:</strong> {message.to}
-                        </p>
-                        <p className="text-gray-700 mb-2">
-                            <strong>From:</strong> {message.from}
-                        </p>
-                        <p className="text-gray-900 mt-4">
-                            {message.message}
-                        </p>
+            <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+                <div className="bg-white shadow-xl rounded-2xl overflow-hidden max-w-3xl w-full grid grid-cols-1 md:grid-cols-2">
+                    <div className="aspect-[4/3] overflow-hidden">
+                        <img
+                            src={message.template}
+                            alt="Postcard Template"
+                            className="w-full h-full object-cover"
+                        />
                     </div>
-                )}
+
+                    <div className="p-6 flex flex-col justify-center text-center">
+                        {message && (
+                            <>
+                                <p className="text-gray-700 mb-2">
+                                    <strong>To:</strong> {message.to}
+                                </p>
+
+                                <p className="text-gray-700 mb-2">
+                                    <strong>From:</strong> {message.from}
+                                </p>
+
+                                <div className="mt-4 bg-gray-50 p-4 rounded-lg">
+                                    <p className="text-gray-900 italic">
+                                        "{message.message}"
+                                    </p>
+                                </div>
+                            </>
+                        )}
+                    </div>
+                </div>
             </div>
         </Layout>
     )

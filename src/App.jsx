@@ -4,6 +4,7 @@ import VoiceMessage from './pages/VoiceMessage'
 import TextMessage from './pages/TextMessage'
 import Share from './pages/Share'
 import ShareText from './pages/ShareText'
+import Template from './pages/Template'
 
 function App() {
   return (
@@ -11,9 +12,10 @@ function App() {
       <Routes>
         <Route path='/' element={<MainPage />} />
         <Route path='/voice' element={<VoiceMessage />} />
+        <Route path='/template' element={<Template />} />
         <Route path='/text' element={<TextMessage />} />
         <Route path='/listen/:id' element={<Share />} />
-        <Route path='/read/:id' element={<ShareText />}/>
+        <Route path='/read/:id' element={<ShareText />} />
       </Routes>
     </Router>
   )

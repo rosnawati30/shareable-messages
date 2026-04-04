@@ -31,7 +31,7 @@ export default function Home() {
                     Voice Message
                 </button>
                 <button
-                    onClick={() => navigate('/text')}
+                    onClick={() => navigate('/template')}
                     className="rounded-md bg-orange-700 px-3.5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:scale-105 hover:bg-orange-800"
                 >
                     Text Message
